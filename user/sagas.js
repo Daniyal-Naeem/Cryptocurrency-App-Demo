@@ -15,8 +15,8 @@ function* getAllUserInfo(action) {
       type: GET_ALL_USER_INFO_REQUEST_SUCCESS,
       payload: {
         id: 'id1',
-        name: 'Michael',
-        email: 'anothertestemail@test.com',
+        name: 'Daniyal',
+        email: 'daniyalnaeem5@test.com',
       },
     });
   } catch (err) {
