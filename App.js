@@ -4,6 +4,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
 import Tabs from "./navigation/tabs";
+import {store} from './store';
+import {Provider} from 'react-redux';
 
 const Stack = createStackNavigator();
 
@@ -12,6 +14,7 @@ const App = () => {
     SplashScreen.hide()
   }, [])
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
@@ -33,6 +36,7 @@ const App = () => {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </Provider>
   )
 }
 
