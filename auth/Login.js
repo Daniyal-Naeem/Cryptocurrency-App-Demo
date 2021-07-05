@@ -1,29 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { View, Text, Button } from "react-native";
-import { connect } from "react-redux";
-import { GET_ALL_USER_INFO_REQUEST } from "../user/actions";
 
-const mapStateToProps = (state, props) => {
-  const { id, name, email } = state.user;
 
-  return { id, name, email };
-};
-
-const mapDispatchToProps = (dispatch, props) => ({
-  getAllUserInfo: () => {
-    dispatch({
-      type: GET_ALL_USER_INFO_REQUEST,
-      payload: {},
-    });
-  },
-});
-
-const HomeView = ({ id, name, email, getAllUserInfo, navigation }) => {
-  // navigation.navigate('Login')
-
-  useEffect(() => {
-    getAllUserInfo();
-  }, [getAllUserInfo]);
+const HomeView = ({ id, name, email, navigation }) => {
 
   return (
     <View style={{ flex: 1 }}>
