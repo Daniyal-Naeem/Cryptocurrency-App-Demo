@@ -5,8 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
 import Tabs from "./navigation/tabs";
 import { Login } from './auth/Login';
-import {store} from './store';
-import {Provider} from 'react-redux';
+import { Provider } from "react-redux";
+import store from "./redux/configureStore";
 
 const Stack = createStackNavigator();
 
