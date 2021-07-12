@@ -1,20 +1,36 @@
 import React from "react";
-import {Text, View, Button, StyleSheet } from "react-native";
+import {Text, View, Button, StyleSheet, FlatList } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment } from "../redux/CounterSlice";
-
+import Counter from '../Counter';
 const List = ({navigation}) => {
   const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
+  const voters = [
+   { id:"Anthony Sistilli "},
+   {id: "Bob Smith"},
+   {id:"Stephanie Foo"},
+   { id:"Kevin Ma"}
+  ];
   return (
     <View style={styles.container}>
       <Text>Redux made easy</Text>
       <Text> Total Votes: {count}</Text>
-      <View style={{width:'80%',padding:30}}>
+      <FlatList
+      data={voters}
+      keyExtractor={(item) => item.id}
+      renderItem={({item})=> {
+        return(
+          <Counter name={voter} />
+          )
+        }}
+        >
         <Button title="Increment" onPress={()=> dispatch(increment())}/>
         <Button title="Decrement" onPress={()=> dispatch(decrement())}/>
-      </View>
+ 
+      </FlatList>
       <Button title='NEXT' onPress={() => navigation.navigate("Home")}/>
+      
     </View>
   );
 }
