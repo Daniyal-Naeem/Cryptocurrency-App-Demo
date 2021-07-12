@@ -5,6 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
 import Tabs from "./navigation/tabs";
 import List from './auth/List';
+import store from './redux/configureStore';
+import {Provider} from 'react-redux'
 
 const Stack = createStackNavigator();
 
@@ -42,4 +44,10 @@ const App = () => {
   )
 }
 
-export default App;
+export default ()=>{
+  return (
+    <Provider store={store}>
+      <App/>
+     </Provider>
+  )
+}
