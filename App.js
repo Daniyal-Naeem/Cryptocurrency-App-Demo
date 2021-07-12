@@ -4,9 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
 import Tabs from "./navigation/tabs";
-import { Login } from './auth/Login';
-import { Provider } from "react-redux";
-import store from "./redux/configureStore";
+import List from './auth/List';
 
 const Stack = createStackNavigator();
 
@@ -14,18 +12,18 @@ const App = () => {
   useEffect(()=> {
     SplashScreen.hide()
   }, [])
+
   return (
-    <Provider store={store}>
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
           headerShown: false
         }}
-        initialRouteName={'Login'}
+        initialRouteName={'List'}
       >
          <Stack.Screen
-          name="Login"
-          component={Login}
+          name="List"
+          component={List}
         />
         <Stack.Screen
           name="Home"
@@ -41,7 +39,6 @@ const App = () => {
         />
       </Stack.Navigator>
     </NavigationContainer>
-    </Provider>
   )
 }
 
