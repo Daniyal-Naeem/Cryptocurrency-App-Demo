@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useDispatch } from "react-redux";
 import { decrement, increment } from "./redux/ducks/counter";
 import { Text, View, Button } from "react-native";
@@ -7,7 +7,7 @@ const Counter = (props) => {
   const { name } = props;
   const dispatch = useDispatch();
 
-  const [votes, setVotes] = React.useState(0);
+  const [votes, setVotes] = useState(0);
 
   const handleIncrement = () => {
     dispatch(increment());
