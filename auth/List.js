@@ -1,22 +1,17 @@
 import React, {useEffect} from "react";
 import {Text, View, Button, StyleSheet, FlatList } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { getUser } from "../redux/ducks/userSlice";
+import { getUsers } from "../redux/ducks/userSlice";
 const List = ({navigation}) => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.userData);
   const dispatch = useDispatch();
-  // const voters = [
-  //  {id: "Anthony Sistilli "},
-  //  {id: "Bob Smith"},
-  //  {id: "Stephanie Foo"},
-  //   {id:"Kevin Ma"}
-  // ];
-  useEffect(() => {
-    dispatch(getUser());
+console.log('user[]', user);
+useEffect(() => {
+  dispatch({'type': 'get-user'});
 }, []);
   return (
     <View style={styles.container}>
-    {user && <Text> Hello, {user.firstName} </Text>}
+   <Text> Hello,</Text>
       <Text>Redux made easy</Text>
       <Text> All Employees:</Text>
       <FlatList
@@ -24,7 +19,7 @@ const List = ({navigation}) => {
          data={user}
          keyExtractor={(item, index) => index.toString()}
          renderItem={({item}) => 
-         <View style={{height: 50}}>
+         <View style={{height: 50, flexDirection: 'row'}}>
          <Text style={{height: 50}}>{item.id}</Text>
          <Text style={{height: 50}}>{item.firstName}</Text>
          <View style={{height: 1,backgroundColor:'gray'}}></View>
