@@ -1,26 +1,17 @@
 
 export const GET_USERS = 'GET_USERS';
-const API_URL = 'https://mocki.io/v1/48419bdb-1d76-45a1-89cb-3ac3fcc7f6ca';
-export const getUsers  = () => {
+const API_URL = 'https://mocki.io/v1/8b297ef1-d9c5-4d29-9589-c067604b6118';
+export const getUsers  = async () => {
   try {
-      return async dispatch => {
           const result = await fetch(API_URL, {
               method: 'GET',
               headers: {
                   'Content-Type': 'application/json',
               },
-          });
-          const json = await result.json();
-          if (json) {
-              dispatch({
-                  type: GET_USERS,
-                  payload: json
-              });
-          } else {
-              console.log('Unable to fetch!');
-          }
-      }
-  } catch (error) {
-      console.log(error);
+            });
+            return result.json()
+        } catch (error) {
+      console.log('requests->user', error);
+      return Promise.reject(error)
   }
 }
