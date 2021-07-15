@@ -10,7 +10,7 @@ import userReducer from "./ducks/userSlice";
 const sagaMiddleware = createSagaMiddleware();
 
 const reducer = combineReducers({
-  user: userReducer
+  user: userReducer,
 });
 
 const store = configureStore({
