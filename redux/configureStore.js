@@ -11,6 +11,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const reducer = combineReducers({
   user: userReducer,
+  user:authReducer,
 });
 
 const store = configureStore({
