@@ -5,7 +5,6 @@ import { getUsers } from "../redux/ducks/userSlice";
 const List = ({navigation}) => {
   const user = useSelector((state) => state.user.userData);
   const dispatch = useDispatch();
-console.log('user[]', user);
 useEffect(() => {
   dispatch({'type': 'get-user'});
 }, []);

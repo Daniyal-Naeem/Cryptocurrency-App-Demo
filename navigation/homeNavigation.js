@@ -1,6 +1,6 @@
 import { CryptoDetail, Transaction } from "../screens";
 import Tabs from "../navigation/tabs";
-import List from '../auth/List';
+import List from '../datalist/List';
 import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
