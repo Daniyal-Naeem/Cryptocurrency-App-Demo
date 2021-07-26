@@ -6,7 +6,7 @@ import {
     Text,
     StyleSheet,
 } from "react-native";
-import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { Home } from "../screens"
 import { COLORS, FONTS, icons } from "../constants"
 import LinearGradient from "react-native-linear-gradient";
