@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity  } from 'react-native'
 import { COLORS, SIZES, FONTS, icons } from '../constants'
+
 const PriceAlert = ({customContainerStyle}) => {
     return (
       <TouchableOpacity style={{

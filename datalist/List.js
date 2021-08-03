@@ -1,18 +1,22 @@
 import React, {useEffect} from "react";
 import {Text, View, Button, StyleSheet, FlatList } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { getUsers } from "../redux/ducks/userSlice";
+import Loader from "../components/Loader";
+
 const List = ({navigation}) => {
   const user = useSelector((state) => state.user.userData);
   const dispatch = useDispatch();
+
 useEffect(() => {
   dispatch({'type': 'get-user'});
 }, []);
+
   return (
     <View style={styles.container}>
    <Text> Hello,</Text>
       <Text>Redux made easy</Text>
       <Text> All Employees:</Text>
+      <Loader />
       <FlatList
        padding ={30}
          data={user}

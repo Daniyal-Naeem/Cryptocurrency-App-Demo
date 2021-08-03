@@ -1,3 +1,4 @@
+import React from 'react';
 import { CryptoDetail, Transaction } from "../screens";
 import Tabs from "../navigation/tabs";
 import List from '../datalist/List';

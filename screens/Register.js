@@ -49,14 +49,14 @@ const Register = ({navigation}) => {
             borderBottomRightRadius: 30,
             paddingHorizontal: 20,
           }}>
-              <Image
+              {/* <Image
                     source={require('../assets/icons/back-arrow.png')}
                     style={{
                       height:10,
                       width:30,
                       marginTop:30
                     }}
-               />
+               /> */}
           <View style={styles.header}>
             <Text style={styles.text_header}>Sign Up</Text>
           </View>

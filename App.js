@@ -2,9 +2,10 @@ import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import store from './redux/configureStore';
 import {Provider} from 'react-redux'
-// import HomeStackNavigator from './navigation/homeNavigation';
-import AuthNavigator from './navigation/authNavigation';
+//import HomeStackNavigator from './navigation/homeNavigation';
+//import AuthNavigator from './navigation/authNavigation';
 import { NavigationContainer } from '@react-navigation/native';
+import HomeStackNavigator from './navigation/homeNavigation';
 
 const App = () => {
   // const token = useSelector(state => state.user.token)
@@ -19,7 +20,8 @@ const App = () => {
   return (
     <NavigationContainer>
       {/* {token ?  <HomeStackNavigator/> : <AuthNavigator />} */}
-      <AuthNavigator/>
+      {/* <AuthNavigator/> */}
+      <HomeStackNavigator/>
     </NavigationContainer>
   )
 }
